@@ -1,19 +1,9 @@
-using EPAMapp.API;
-using Microsoft.EntityFrameworkCore;
-using Noter.DAL.SqlServer;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-var connection = builder.Configuration.GetConnectionString("ConnectionString");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
-
-builder.Services.InitializeRepositories();
-builder.Services.InitializeServices();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

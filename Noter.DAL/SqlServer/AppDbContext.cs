@@ -6,9 +6,9 @@ namespace Noter.DAL.SqlServer
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Admin> Admins { get; set; }
-        public DbSet<Note> Notes { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<Note> Note { get; set; }
 
         public AppDbContext()
         {
@@ -32,7 +32,7 @@ namespace Noter.DAL.SqlServer
                 {
                     Id = 1,
                     Name = "Admin",
-                    Surname = "Admin",
+                    LastName = "Admin",
                     NickName = "Daddy",
                     Email = "admin@admin.com",
                     Password = "1111"
@@ -47,14 +47,15 @@ namespace Noter.DAL.SqlServer
                 .OnDelete(DeleteBehavior.Cascade);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var configPath = Path.Combine("..", "EPAMapp.API", "appsettings.Development.json");
-            dynamic config = JsonConvert.DeserializeObject(File.ReadAllText(configPath));
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
 
-            JsonHolder.ConnectionString = config.ConnectionStrings.ConnectionString;
+        //    //var configPath = Path.Combine("..", "EPAMapp.API", "appsettings.Development.json");
+        //    //dynamic config = JsonConvert.DeserializeObject(File.ReadAllText(configPath));
 
-            optionsBuilder.UseSqlServer(JsonHolder.ConnectionString);
-        }
+        //    //JsonHolder.ConnectionString = config.ConnectionStrings.ConnectionString;
+
+        //    //optionsBuilder.UseSqlServer(JsonHolder.ConnectionString);
+        //}
     }
 }

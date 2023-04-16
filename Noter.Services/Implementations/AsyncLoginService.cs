@@ -43,7 +43,7 @@ namespace Noter.Services.Implementations
                     Email = model.Email,
                     Password = model.Password,
                     Name = "",
-                    Surname = ""
+                    LastName = ""
                 };
 
 

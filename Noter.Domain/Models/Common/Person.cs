@@ -1,15 +1,15 @@
 ﻿namespace Noter.Domain.Models.Common
 {
-    public class Human : BaseEntity
+    public class Person : BaseEntity
     {
         public string Name { get; set; }
-        public string Surname { get; set; }
+        public string LastName { get; set; }
 
         public string FullName
         {
             get
             {
-                return $"{Name} {Surname}";
+                return $"{Name} {LastName}";
             }
         }
     }

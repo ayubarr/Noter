@@ -41,7 +41,7 @@ namespace Noter.Services.Implementations
                     User user = new()
                     {
                         Name = userModel.Name,
-                        Surname = userModel.Surname,
+                        LastName = userModel.Surname,
                         Email = userModel.Email,
                         Password = userModel.Password
                     };
@@ -63,7 +63,7 @@ namespace Noter.Services.Implementations
                     Admin admin = new()
                     {
                         Name = adminModel.Name,
-                        Surname = adminModel.Surname,
+                        LastName = adminModel.Surname,
                         Email = adminModel.Email,
                         Password = adminModel.Password,
                         NickName = adminModel.NickName
@@ -192,7 +192,7 @@ namespace Noter.Services.Implementations
                 if (entity is User user && model is DTOUpdateUser userModel)
                 {
                     user.Name = userModel.Name;
-                    user.Surname = userModel.Surname;
+                    user.LastName = userModel.Surname;
                     user.Email = userModel.Email;
                     user.Password = userModel.Password;
                 }
@@ -206,7 +206,7 @@ namespace Noter.Services.Implementations
                 else if (entity is Admin admin && model is DTOUpdateAdmin adminModel)
                 {
                     admin.Name = adminModel.Name;
-                    admin.Surname = adminModel.Surname;
+                    admin.LastName = adminModel.Surname;
                     admin.Email = adminModel.Email;
                     admin.Password = adminModel.Password;
                     admin.NickName = adminModel.NickName;
